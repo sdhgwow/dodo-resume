@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import { useThemeStore } from "./providers/themeStore";
 import { HeroSection } from "@/widgets/HeroSection";
 import { StackSection } from "@/widgets/StackSection";
