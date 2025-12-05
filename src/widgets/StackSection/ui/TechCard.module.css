@@ -1,0 +1,133 @@
+.card {
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-bg-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--color-accent),
+      var(--color-purple),
+      var(--color-yellow)
+    );
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    flex-shrink: 0;
+    transition: all var(--transition-normal);
+  }
+  
+  .card:hover .iconWrapper {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .iconImage {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    /* filter: brightness(0); */
+  }
+  
+  .info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+  
+  .level {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  
+  .categoryBadge {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .card {
+      padding: var(--spacing-md);
+    }
+    
+    .iconWrapper {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .icon {
+      font-size: 1.25rem;
+    }
+
+    .iconImage {
+      width: 70%;
+      height: 70%;
+    }
+    
+    .name {
+      font-size: 0.9rem;
+    }
+    
+    .level {
+      font-size: 1rem;
+    }
+  }

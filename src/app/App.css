@@ -1,0 +1,19 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Smooth scroll для якорей */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Улучшенный скролл для секций */
+section {
+  scroll-margin-top: 2rem;
+}

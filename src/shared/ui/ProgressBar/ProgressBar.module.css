@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+  }
+  
+  .track {
+    flex: 1;
+    background: var(--color-bg-secondary);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .fill {
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .value {
+    font-size: 0.875rem;
+    font-weight: 700;
+    min-width: 40px;
+    text-align: right;
+  }
